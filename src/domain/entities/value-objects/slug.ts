@@ -7,10 +7,10 @@ export class Slug {
 
   /**
    * Receives a string and normalizes it to a slug.
-   * 
+   *
    * Example: "Hello, World!" -> "hello-world"
-   * 
-   * @param text 
+   *
+   * @param text
    */
   static createFromText(text: string): Slug {
     const normalizedText = text
@@ -25,4 +25,4 @@ export class Slug {
 
     return new Slug(normalizedText)
   }
-} 
+}
