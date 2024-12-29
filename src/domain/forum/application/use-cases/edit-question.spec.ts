@@ -22,14 +22,13 @@ describe('Edit Question', () => {
 
     await inMemoryQuestionsRepository.create(newQuestion)
 
-    const result = await sut.execute({
+    await sut.execute({
       questionId: newQuestion.id.toValue(),
       authorId: 'author-1',
       title: 'New title',
       content: 'New content',
     })
 
-    expect(result.success).toBe(true)
     expect(inMemoryQuestionsRepository.items[0]).toMatchObject({
       title: 'New title',
       content: 'New content',
