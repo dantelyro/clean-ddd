@@ -7,7 +7,10 @@ interface FetchQuestionAnswersUseCaseRequest {
   page: number
 }
 
-type FetchQuestionAnswersUseCaseResponse = Either<[], { answers: Answer[] }>
+type FetchQuestionAnswersUseCaseResponse = Either<
+  { answers: [] },
+  { answers: Answer[] }
+>
 
 export class FetchQuestionAnswersUseCase {
   constructor(private answersRepository: AnswersRepository) {}

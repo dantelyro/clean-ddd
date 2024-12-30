@@ -6,7 +6,10 @@ interface FetchRecentQuestionsUseCaseRequest {
   page: number
 }
 
-type FetchRecentQuestionsUseCaseResponse = Either<[], { questions: Question[] }>
+type FetchRecentQuestionsUseCaseResponse = Either<
+  { questions: [] },
+  { questions: Question[] }
+>
 
 export class FetchRecentQuestionsUseCase {
   constructor(private questionsRepository: QuestionsRepository) {}

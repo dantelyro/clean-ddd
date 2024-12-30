@@ -8,7 +8,7 @@ interface FetchAnswerCommentsUseCaseRequest {
 }
 
 type FetchAnswerCommentsUseCaseResponse = Either<
-  [],
+  { answerComments: [] },
   { answerComments: AnswerComment[] }
 >
 
