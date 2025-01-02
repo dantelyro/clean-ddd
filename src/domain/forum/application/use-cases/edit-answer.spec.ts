@@ -13,7 +13,7 @@ describe('Edit Answer', () => {
     sut = new EditAnswerUseCase(inMemoryAnswersRepository)
   })
 
-  test('should be able to edit a answer', async () => {
+  it('should be able to edit a answer', async () => {
     const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityID('author-1'),
@@ -34,7 +34,7 @@ describe('Edit Answer', () => {
     })
   })
 
-  test('should not be able to edit a answer from another user', async () => {
+  it('should not be able to edit a answer from another user', async () => {
     const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityID('author-1'),
