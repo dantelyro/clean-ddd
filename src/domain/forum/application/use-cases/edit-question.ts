@@ -3,7 +3,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Question } from '../../enterprise/entities/question'
 import { QuestionAttachment } from '../../enterprise/entities/question-attachment'
 import { QuestionAttachmentList } from '../../enterprise/entities/question-attachment-list'
-import { QuestionAttachmentsRepository } from '../repositories/question-attachments.repository'
+import { QuestionAttachmentsRepository } from '../repositories/question-attachments-repository'
 import { QuestionsRepository } from '../repositories/questions-repository'
 import { NotAllowedError } from './errors/not-allowed-error'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
@@ -59,9 +59,9 @@ export class EditQuestionUseCase {
 
     questionAttachmentsList.update(questionAttachments)
 
+    question.attachments = questionAttachmentsList
     question.title = title
     question.content = content
-    question.attachments = questionAttachmentsList
 
     await this.questionsRepository.save(question)
 

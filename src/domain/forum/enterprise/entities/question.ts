@@ -36,12 +36,12 @@ export class Question extends AggregateRoot<QuestionProps> {
     return this.props.slug
   }
 
-  get createdAt() {
-    return this.props.createdAt
-  }
-
   get attachments() {
     return this.props.attachments ?? new QuestionAttachmentList()
+  }
+
+  get createdAt() {
+    return this.props.createdAt
   }
 
   get updatedAt() {
@@ -58,6 +58,7 @@ export class Question extends AggregateRoot<QuestionProps> {
 
   set attachments(attachments: QuestionAttachmentList) {
     this.props.attachments = attachments
+    this.touch()
   }
 
   set content(content: string) {
