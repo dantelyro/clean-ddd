@@ -22,7 +22,7 @@ describe('Answer Question', () => {
     const result = await sut.execute({
       questionId: '1',
       instructorId: '1',
-      content: 'Nova resposta',
+      content: 'New Answer',
       attachmentsIds: ['1', '2'],
     })
 
